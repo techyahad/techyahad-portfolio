@@ -51,7 +51,7 @@ const Project: React.FC = () => {
     return (
         <div className="container mx-auto h-auto flex flex-col items-center my-12 md:my-24 md:p-0 p-6 ">
             <header className="w-full flex flex-col items-center justify-center text-center">
-                <h1 className="text-4xl md:text-7xl font-semibold text-gray-800 mb-6">
+                <h1 className="text-4xl md:text-6xl font-semibold text-gray-800 mb-6">
                     Explore <span className='text-gray-500'>My Offerings</span>  for You<span className="text-2xl pl-2">■</span>
                 </h1>
                 <p className="text-gray-600 text-lg max-w-4xl">
