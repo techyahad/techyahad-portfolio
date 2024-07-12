@@ -16,3 +16,26 @@
     transform: scale(0.95);
     transition: opacity 300ms, transform 300ms;
 }
+.creative-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.creative-grid .fade-enter {
+    opacity: 0;
+}
+
+.creative-grid .fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+}
+
+.creative-grid .fade-exit {
+    opacity: 1;
+}
+
+.creative-grid .fade-exit-active {
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+}

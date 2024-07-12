@@ -1,87 +1,177 @@
 import { Link } from "react-router-dom"
 import { GoArrowUpRight } from "react-icons/go";
+import { FaPhone, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa'
+import { FaLinkedin, FaFacebook, FaBehance, FaGithub } from 'react-icons/fa';
+
 const Contact: React.FC = () => {
 
 
     return (
-
-        <div className="container mx-auto flex md:items-center md:my-24 my-12 md:p-0 p-6">
-            <div className="pr-6 w-1/2">
-                <div className=" flex flex-col md:flex-row items-center justify-between ">
-                    {/* Left Section */}
-                    <div className="w-full md:w-1/2 mb-8 md:mb-0 ">
-                        <div className="group">
-                            <h1 className="text-4xl md:text-6xl font-semibold text-gray-700 mb-6">
-                                Contact<span className='text-3xl pl-2'>■</span>
-                            </h1>
-                        </div>
+        <div className="w-full my-20 ">
+            <div className="container mx-auto flex items-center justify-center">
+                <div className="text-center">
+                    <h1 className="text-6xl text-gray-800 font-semibold  mb-6">Let's Start <span className="text-gray-500"> Talk..</span></h1>
+                    <p className="text-gray-600 text-lg max-w-4xl">Reach out to us and let's discuss how We're here to listen and help you acheive your goals.</p>
                     </div>
-                </div>
-                <p className="mt-3 mb-12 text-lg text-gray-600 ">
-                    Have a project in mind or just want to chat? Feel free to reach out using the contact form below
-                </p>
-                <ul className="mb-6 md:mb-0">
-                    <li className="flex">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" className="h-6 w-6 text-gray-800">
-                            <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
-                            <path
-                                d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z">
-                            </path>
-                        </svg>
-                        <div className="ml-4 mb-4">
-                            <h3 className="mb-2 text-lg font-medium leading-6 text-gray-600 ">Our Address
-                            </h3>
-                            <p className="text-gray-600 dark:text-slate-400">Hala Naka Kali Mori </p>
-                            <p className="text-gray-600 dark:text-slate-400">Sindh, Pakistan</p>
-                        </div>
-                    </li>
-                    <li className="flex">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" className="h-6 w-6 text-gray-800">
-                            <path
-                                d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2">
-                            </path>
-                            <path d="M15 7a2 2 0 0 1 2 2"></path>
-                            <path d="M15 3a6 6 0 0 1 6 6"></path>
-                        </svg>
-                        <div className="ml-4 mb-4">
-                            <h3 className="mb-2 text-lg font-medium leading-6 text-gray-800 ">Contact
-                            </h3>
-                            <p className="text-gray-600 dark:text-slate-400">Mobile: +923330700019</p>
-                            <p className="text-gray-600 dark:text-slate-400">Mail: abdulahadbaloxh@gmail.com</p>
-                        </div>
-                    </li>
-
-                </ul>
             </div>
-            <form id="contactForm" className="w-1/2">
-                <div className="mb-6">
 
-                    <div className="mx-0 mb-1 sm:mb-4">
-                        <div className="mx-0 mb-1 sm:mb-4">
-                            <label htmlFor="name" className="pb-1 text-xs uppercase tracking-wider"></label><input type="text" id="name" placeholder="Your name" className="mb-2 w-full  border border-gray-800 py-2 pl-2 pr-4  sm:mb-0" name="name " />
-                        </div>
-                        <div className="mx-0 mb-1 sm:mb-4">
-                            <label htmlFor="email" className="pb-1 text-xs uppercase tracking-wider"></label><input type="email" id="email" placeholder="Your email address" className="mb-2 w-full  border border-gray-800 py-2 pl-2 pr-4 sm:mb-0" name="email" />
-                        </div>
+            <div className="relative w-screen bg-white border rounded-3xl overflow-hidden flex mx-auto container my-20">
+
+                {/* Left Section */}
+                <div className="flex-1 bg-gray-800 border text-white p-16 flex flex-col justify-between">
+                    <div>
+                        <h1 className="text-4xl text-gray-300 mb-4 font-semibold">Get in touch</h1>
+                        <p className=" text-gray-300">
+                            I'd love to hear from you! Whether you have a question about features, pricing,<br /> need a demo,  or anything else, I'm ready to  answer all your questions.
+                        </p>
                     </div>
-                    <div className="mx-0 mb-1 sm:mb-4">
-                        <label htmlFor="textarea" className="pb-1 text-xs uppercase tracking-wider"></label><textarea id="textarea" name="textarea" placeholder="Write your message..." className="mb-2 w-full h-48  border border-gray-800 py-2 pl-2 pr-4  sm:mb-0"></textarea>
+                    <div className="text-gray-200 text-lg space-y-2  ">
+                        <div className="flex items-center ">
+                            <FaPhone className="rotate-90" />
+                            <h1 className="pl-2">+923330700019</h1>
+                        </div>
+                        <div className="flex items-center ">
+                            <FaMapMarkerAlt />
+                            <h1 className="pl-2">Hyderabad, Sindh Pakistan </h1>
+                        </div>
+                        <div className="flex items-center ">
+                            <FaEnvelope />
+                            <h1 className="pl-2">abdulahadbaloxh@gmail.com</h1>
+                        </div>
+
+
+
+
+                    </div>
+                    <div className="flex items-center space-x-4  ">
+                        <FaLinkedin size={25} />
+                        <FaBehance size={25} />
+                        <FaGithub size={25} />
+                        <FaFacebook size={25} />
+
                     </div>
                 </div>
-                <div className="hidden md:flex">
-                    <Link to="/contact" className="flex text-gray-800 items-center justify-center  font-medium text-xl group relative">
-                        <span className="group-hover:text-gray-600">Get in Touch</span>
-                        <GoArrowUpRight size={25} className="mt-1 ml-2 rotate-45 group-hover:rotate-0 transition-transform duration-300" />
-                        <div className="absolute inset-x-0 bottom-0  h-0.5 bg-transparent transition-all duration-300 group-hover:bg-gray-600"></div>
-                    </Link>
+
+                {/* Right Section */}
+                <div className="flex-1 bg-white p-16 flex flex-col border justify-center">
+                    <form className="">
+                        <div className="mb-10 flex space-x-4">
+                            <div className="w-1/2">
+                                <label className="block text-gray-500 text-sm font-semibold mb-2" htmlFor="first-name">
+                                    First Name
+                                </label>
+                                <input
+                                    className="appearance-none border-b-2 border-gray-300 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none "
+                                    id="first-name"
+                                    type="text"
+                                    placeholder="Alexa"
+                                />
+                            </div>
+                            <div className="w-1/2">
+                                <label className="block text-gray-500 text-sm font-semibold mb-2" htmlFor="last-name">
+                                    Last Name
+                                </label>
+                                <input
+                                    className="appearance-none border-b-2 border-gray-300 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none "
+                                    id="last-name"
+                                    type="text"
+                                    placeholder="Adam"
+                                />
+                            </div>
+                        </div>
+                        <div className="mb-10 flex space-x-4">
+                            <div className="w-1/2">
+                                <label className="block text-gray-500 text-sm font-semibold mb-2" htmlFor="email">
+                                    Email
+                                </label>
+                                <input
+                                    className="appearance-none border-b-2 border-gray-300 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none "
+                                    id="email"
+                                    type="email"
+                                    placeholder="alexa@gmail.com"
+                                />
+                            </div>
+                            <div className="w-1/2">
+                                <label className="block text-gray-600 text-sm font-semibold mb-2" htmlFor="number">
+                                    Phone No:
+                                </label>
+                                <input
+                                    className="appearance-none border-b-2 border-gray-300 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none "
+                                    id="number"
+                                    type="number"
+                                    placeholder="123 4567890"
+                                />
+                            </div>
+                        </div>
+
+                        <div className="mb-10">
+                            <label className="block text-gray-600 text-sm font-semibold mb-4">
+                                Select Subject?
+                            </label>
+                            <div className="flex space-x-4">
+                                <div>
+                                    <label className="inline-flex items-center">
+                                        <input
+                                            type="radio"
+                                            className="form-checkbox accent-gray-700  h-5 w-5 text-gray-600"
+                                        />
+                                        <span className="ml-2 text-gray-700">Web Development</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label className="inline-flex items-center">
+                                        <input
+                                            type="radio"
+                                            className="form-checkbox accent-gray-700  h-5 w-5 text-gray-600"
+                                        />
+                                        <span className="ml-2 text-gray-700">Branding Designing</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label className="inline-flex items-center">
+                                        <input
+                                            type="radio"
+                                            className="form-checkbox accent-gray-700  h-5 w-5 text-gray-600"
+                                        />
+                                        <span className="ml-2 text-gray-700">UI and UX</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label className="inline-flex items-center">
+                                        <input
+                                            type="radio"
+                                            className="form-checkbox accent-gray-700 h-5 w-5 text-gray-600"
+                                        />
+                                        <span className="ml-2 text-gray-700">UX Experience</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="mb-10">
+                            <label className="block text-gray-500 text-sm font-semibold mb-2" htmlFor="message">
+                                Message
+                            </label>
+                            <textarea
+                                className="appearance-none outline-none border-b-2 border-gray-300 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none "
+                                id="message"
+                                rows={4}
+                                placeholder="Hey Ahad I'm interested in... "
+                            ></textarea>
+                        </div>
+                        <div className="">
+                            <div className="hidden md:flex cursor-pointer">
+                                <Link to="/contact" className="flex items-center justify-center text-gray-800 bg-gray-800 py-3 rounded-full   px-6 border-2  font-medium text-xl group relative">
+                                    <div className='flex items-center gap-1 justify-center text-gray-300'>
+                                        <span className="">Send Message</span>
+                                        <GoArrowUpRight size={25} className="pt-1 rotate-45 group-hover:rotate-0 transition-transform duration-300" />
+                                    </div>
+                                </Link>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
-
     );
 };
 

@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
         <nav className="">
             <div className="container mx-auto px-4 py-6 flex md:bg-white bg-gray-900 justify-between items-center">
                 {/* Logo */}
-                <div className="flex-shrink-0 text-2xl font-bold">
+                <div className="flex-shrink-0 text-2xl font-bold cursor-pointer">
                     <Link to="/">
                         <img src={isMobile ? LightLogo : DarkLogo} className=" h-16 p-1" alt="" />
                     </Link>
@@ -36,19 +36,19 @@ const Navbar: React.FC = () => {
 
                 {/* Navigation Links */}
                 <div className="hidden md:flex space-x-10">
-                    <Link to="main" smooth={true} duration={500} className="text-gray-600 cursor-pointer text-xl hover:text-gray-600">
+                    <Link to="main" smooth={true} duration={500} className="text-gray-600 cursor-pointer text-xl hover:text-gray-700">
                         Intro
                     </Link>
-                    <Link to="about" smooth={true} duration={500} className="text-gray-600 text-xl hover:text-gray-600 cursor-pointer">
+                    <Link to="about" smooth={true} duration={500} className="text-gray-600 text-xl hover:text-gray-700 cursor-pointer">
                         About
                     </Link>
-                    <Link to="projects" smooth={true} duration={500} className="text-gray-600 text-xl hover:text-gray-600 cursor-pointer">
+                    <Link to="projects" smooth={true} duration={500} className="text-gray-600 text-xl hover:text-gray-700 cursor-pointer">
                         Services
                     </Link>
-                    <Link to="portfolio" smooth={true} duration={500} className="text-gray-600 text-xl hover:text-gray-600 cursor-pointer">
+                    <Link to="portfolio" smooth={true} duration={500} className="text-gray-600 text-xl hover:text-gray-700 cursor-pointer">
                         Portfolio
                     </Link>
-                    <Link to="contact" smooth={true} duration={500} className="text-gray-600 text-xl hover:text-gray-600 cursor-pointer">
+                    <Link to="contact" smooth={true} duration={500} className="text-gray-600 text-xl hover:text-gray-700 cursor-pointer">
                         Contact
                     </Link>
                 </div>

@@ -7,6 +7,9 @@ import About from '../About/About';
 import Footer from '../Footer/Footer';
 import Portfolio from '../Portfolio/Portfolio';
 import Blog from "../Blog/Blog"
+import Contact from '../Contact/Contact';
+import CTA from '../CTA/CTA';
+
 const Index: React.FC = () => {
     return (
         <>
@@ -28,6 +31,14 @@ const Index: React.FC = () => {
             <hr className="container mx-auto" />
 
             <Element name="contact">
+                <Contact />
+            </Element>
+            <hr className="container mx-auto" />
+
+
+            <hr className="container mx-auto" />
+
+            <Element name="blog">
                 <Blog />
             </Element>
 
