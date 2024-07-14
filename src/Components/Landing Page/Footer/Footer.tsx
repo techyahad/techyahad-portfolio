@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from "../../assets/logo/Trans.png"
+import Logo from "../../../assets/logo/Trans.png"
 import { GoArrowUpRight } from "react-icons/go";
 import { FaLinkedin, FaGithub, FaFacebook, FaBehance } from 'react-icons/fa';
 

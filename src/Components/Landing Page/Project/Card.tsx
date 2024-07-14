@@ -10,7 +10,7 @@ interface Card {
 
 const Card: React.FC<Card> = ({ title, description, icon }) => {
     return (
-        <div className=" rounded-3xl md:p-12 p-6 cursor-pointer transition-transform duration-300 bg-gray-100 hover:bg-gray-200">
+        <div className="rounded-3xl md:p-12 p-6 border cursor-pointer transition-transform duration-300 bg-gray-100 hover:bg-gray-200 group">
             <div className='mb-4'>
                 <img src={icon} alt={`${title} icon`} className="md:w-24 w-16 h-auto mr-4" />
             </div>
@@ -18,7 +18,7 @@ const Card: React.FC<Card> = ({ title, description, icon }) => {
                 <h2 className="text-2xl text-gray-800 font-medium">{title}</h2>
             </div>
             <p className="text-gray-500 mb-4">{description}</p>
-            <button className='text-gray-600'>
+            <button className='text-gray-600 transform transition-transform duration-300 group-hover:translate-x-2'>
                 <HiOutlineArrowLongRight size={30} />
             </button>
         </div>

@@ -1,14 +1,12 @@
 import React from 'react';
 import { Link, Element } from 'react-scroll'; // Import necessary components from react-scroll
-import Main from './Main';
-import Navbar from './Navbar';
-import Project from '../Project/Project';
-import About from '../About/About';
-import Footer from '../Footer/Footer';
-import Portfolio from '../Portfolio/Portfolio';
-import Blog from "../Blog/Blog"
-import Contact from '../Contact/Contact';
-import CTA from '../CTA/CTA';
+import Main from './Hero/Main';
+import Navbar from './Hero/Navbar';
+import Project from './Project/Project';
+import Footer from './Footer/Footer';
+import Portfolio from './Portfolio/Portfolio';
+import Blog from "./Blog/Blog"
+import Contact from './Contact/Contact';
 
 const Index: React.FC = () => {
     return (
@@ -30,17 +28,17 @@ const Index: React.FC = () => {
             </Element>
             <hr className="container mx-auto" />
 
+
+
             <Element name="contact">
                 <Contact />
             </Element>
             <hr className="container mx-auto" />
 
-
-            <hr className="container mx-auto" />
-
             <Element name="blog">
                 <Blog />
             </Element>
+
 
             <Footer />
         </>

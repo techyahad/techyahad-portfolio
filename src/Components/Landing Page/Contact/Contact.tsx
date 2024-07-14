@@ -7,25 +7,25 @@ const Contact: React.FC = () => {
 
 
     return (
-        <div className="w-full my-20 ">
+        <div className="w-full font-serif my-20 ">
             <div className="container mx-auto flex items-center justify-center">
                 <div className="text-center">
-                    <h1 className="text-6xl text-gray-800 font-semibold  mb-6">Let's Start <span className="text-gray-500"> Talk..</span></h1>
+                    <h1 className="text-6xl text-gray-900 font-medium  mb-6">Let's Start <span className="text-gray-500"> Talk..</span></h1>
                     <p className="text-gray-600 text-lg max-w-4xl">Reach out to us and let's discuss how We're here to listen and help you acheive your goals.</p>
-                    </div>
+                </div>
             </div>
 
             <div className="relative w-screen bg-white border rounded-3xl overflow-hidden flex mx-auto container my-20">
 
                 {/* Left Section */}
-                <div className="flex-1 bg-gray-800 border text-white p-16 flex flex-col justify-between">
+                <div className="flex-1 bg-gray-900 border text-white p-16 flex flex-col justify-between">
                     <div>
-                        <h1 className="text-4xl text-gray-300 mb-4 font-semibold">Get in touch</h1>
-                        <p className=" text-gray-300">
+                        <h1 className="text-4xl text-gray-300 mb-4 font-medium">Get in touch</h1>
+                        <p className=" text-gray-400">
                             I'd love to hear from you! Whether you have a question about features, pricing,<br /> need a demo,  or anything else, I'm ready to  answer all your questions.
                         </p>
                     </div>
-                    <div className="text-gray-200 text-lg space-y-2  ">
+                    <div className="text-gray-400 text-lg space-y-2  ">
                         <div className="flex items-center ">
                             <FaPhone className="rotate-90" />
                             <h1 className="pl-2">+923330700019</h1>
@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
 
 
                     </div>
-                    <div className="flex items-center space-x-4  ">
+                    <div className="flex items-center text-gray-400 space-x-4  ">
                         <FaLinkedin size={25} />
                         <FaBehance size={25} />
                         <FaGithub size={25} />
@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
                     <form className="">
                         <div className="mb-10 flex space-x-4">
                             <div className="w-1/2">
-                                <label className="block text-gray-500 text-sm font-semibold mb-2" htmlFor="first-name">
+                                <label className="block text-gray-500 text-sm font-medium mb-2" htmlFor="first-name">
                                     First Name
                                 </label>
                                 <input
@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
                                 />
                             </div>
                             <div className="w-1/2">
-                                <label className="block text-gray-500 text-sm font-semibold mb-2" htmlFor="last-name">
+                                <label className="block text-gray-500 text-sm font-medium mb-2" htmlFor="last-name">
                                     Last Name
                                 </label>
                                 <input
@@ -81,7 +81,7 @@ const Contact: React.FC = () => {
                         </div>
                         <div className="mb-10 flex space-x-4">
                             <div className="w-1/2">
-                                <label className="block text-gray-500 text-sm font-semibold mb-2" htmlFor="email">
+                                <label className="block text-gray-500 text-sm font-medium mb-2" htmlFor="email">
                                     Email
                                 </label>
                                 <input
@@ -92,7 +92,7 @@ const Contact: React.FC = () => {
                                 />
                             </div>
                             <div className="w-1/2">
-                                <label className="block text-gray-600 text-sm font-semibold mb-2" htmlFor="number">
+                                <label className="block text-gray-600 text-sm font-medium mb-2" htmlFor="number">
                                     Phone No:
                                 </label>
                                 <input
@@ -105,7 +105,7 @@ const Contact: React.FC = () => {
                         </div>
 
                         <div className="mb-10">
-                            <label className="block text-gray-600 text-sm font-semibold mb-4">
+                            <label className="block text-gray-600 text-sm font-medium mb-4">
                                 Select Subject?
                             </label>
                             <div className="flex space-x-4">
@@ -148,7 +148,7 @@ const Contact: React.FC = () => {
                             </div>
                         </div>
                         <div className="mb-10">
-                            <label className="block text-gray-500 text-sm font-semibold mb-2" htmlFor="message">
+                            <label className="block text-gray-500 text-sm font-medium mb-2" htmlFor="message">
                                 Message
                             </label>
                             <textarea
@@ -160,7 +160,7 @@ const Contact: React.FC = () => {
                         </div>
                         <div className="">
                             <div className="hidden md:flex cursor-pointer">
-                                <Link to="/contact" className="flex items-center justify-center text-gray-800 bg-gray-800 py-3 rounded-full   px-6 border-2  font-medium text-xl group relative">
+                                <Link to="/contact" className="flex items-center justify-center text-gray-800 bg-gray-800 py-3 rounded-full   px-6 border-2  text-lg     group relative">
                                     <div className='flex items-center gap-1 justify-center text-gray-300'>
                                         <span className="">Send Message</span>
                                         <GoArrowUpRight size={25} className="pt-1 rotate-45 group-hover:rotate-0 transition-transform duration-300" />

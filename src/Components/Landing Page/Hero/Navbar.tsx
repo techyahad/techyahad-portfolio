@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-scroll';
 import { GoArrowUpRight } from 'react-icons/go';
-import DarkLogo from '../../assets/logo/1.png';
-import LightLogo from '../../assets/logo/Trans.png';
+import DarkLogo from '../../../assets/logo/1.png';
+import LightLogo from '../../../assets/logo/Trans.png';
 
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);

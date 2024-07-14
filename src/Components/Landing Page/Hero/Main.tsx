@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { GoArrowUpRight } from "react-icons/go";
-import image3 from "../../assets/images/Mockuo.jpg";
-import Screen1 from "../../assets/images/Screen 1.jpg"
-import Screen2 from "../../assets/images/Screen 1.jpg"
+import image3 from "../../../assets/images/Mockuo.jpg";
+import Screen1 from "../../../assets/images/Screen 1.jpg"
+import Screen2 from "../../../assets/images/Screen 1.jpg"
 
 
 
@@ -30,7 +30,7 @@ const Main: React.FC = () => {
                 <img src={Screen1} alt="Graphic or profile" className="w-1/3 object-cover rounded-3xl" style={{ height: 'calc(100vh / 1.5)' }} />
                 <img src={image3} alt="Graphic or profile" className="w-2/3  object-cover rounded-3xl" style={{ height: 'calc(100vh / 1.5)' }} />
             </div>
-           
+
         </div>
     );
 };
