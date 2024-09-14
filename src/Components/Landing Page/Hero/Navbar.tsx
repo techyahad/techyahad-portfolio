@@ -1,99 +1,83 @@
-import React, { useState } from 'react';
-import { Link } from 'react-scroll';
+import React, { useState, useEffect } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import { GoArrowUpRight } from 'react-icons/go';
+import { MdOutlineClose } from "react-icons/md";
 import DarkLogo from '../../../assets/logo/1.png';
-import LightLogo from '../../../assets/logo/Trans.png';
+import { LiaGripLinesSolid } from "react-icons/lia";
 
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
 
-
-    const handleResize = () => {
-        setIsMobile(window.innerWidth < 768); // Adjust the breakpoint as needed
-    };
-
-    // Listen to window resize event
-    React.useEffect(() => {
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
+    // Toggle the mobile menu and prevent scrolling when the menu is open
     const toggleMenu = () => {
         setIsOpen(!isOpen);
+        if (!isOpen) {
+            document.body.classList.add('overflow-hidden');
+        } else {
+            document.body.classList.remove('overflow-hidden');
+        }
     };
+
+    useEffect(() => {
+        // Clean up when the component unmounts
+        return () => {
+            document.body.classList.remove('overflow-hidden');
+        };
+    }, []);
 
     return (
         <nav className="">
-            <div className="container mx-auto px-4 py-6 flex md:bg-white bg-gray-900 justify-between items-center">
-                {/* Logo */}
+            <div className="container bg-white lg:bg-inherit mx-auto md:px-0 px-3 py-6 flex justify-between items-center">
+                {/* Logo Section */}
                 <div className="flex-shrink-0 text-2xl font-bold cursor-pointer">
-                    <Link to="/">
-                        <img src={isMobile ? LightLogo : DarkLogo} className=" h-16 p-1" alt="" />
-                    </Link>
+                    <RouterLink to="/">
+                        <img
+                            src={DarkLogo}
+                            className="h-12 md:h-16 p-1" // Reduced size on mobile
+                            alt="Logo"
+                        />
+                    </RouterLink>
                 </div>
 
-                {/* Navigation Links */}
+                {/* Desktop Menu */}
                 <div className="hidden md:flex space-x-10">
-                    <Link to="main" smooth={true} duration={500} className="text-gray-600 cursor-pointer text-xl hover:text-gray-700">
-                        Intro
-                    </Link>
-                    <Link to="about" smooth={true} duration={500} className="text-gray-600 text-xl hover:text-gray-700 cursor-pointer">
-                        About
-                    </Link>
-                    <Link to="projects" smooth={true} duration={500} className="text-gray-600 text-xl hover:text-gray-700 cursor-pointer">
-                        Services
-                    </Link>
-                    <Link to="portfolio" smooth={true} duration={500} className="text-gray-600 text-xl hover:text-gray-700 cursor-pointer">
-                        Portfolio
-                    </Link>
-                    <Link to="contact" smooth={true} duration={500} className="text-gray-600 text-xl hover:text-gray-700 cursor-pointer">
-                        Contact
-                    </Link>
+                    <RouterLink to="/home" className="relative text-gray-800 cursor-pointer text-xl hover:text-gray-600 group pb-1">Home</RouterLink>
+                    <RouterLink to="portfolio" className="relative text-gray-800 cursor-pointer text-xl hover:text-gray-600 group pb-1">Work</RouterLink>
+                    <RouterLink to="/services" className="relative text-gray-800 cursor-pointer text-xl hover:text-gray-600 group pb-1">Services</RouterLink>
+                    <RouterLink to="/blogs" className="relative text-gray-800 cursor-pointer text-xl hover:text-gray-600 group pb-1">Insights</RouterLink>
+                    <RouterLink to="/about" className="relative text-gray-800 cursor-pointer text-xl hover:text-gray-600 group pb-1">About</RouterLink>
                 </div>
 
-                {/* CTA Button */}
+                {/* Desktop CTA Button */}
                 <div className="hidden md:flex cursor-pointer">
-                    <Link to="/contact" className="flex items-center justify-center text-gray-800  py-3 rounded-full hover:bg-gray-800  px-6 border-2  font-medium text-xl group relative">
-                        <div className='flex items-center gap-1 justify-center group-hover:text-gray-300'>
+                    <RouterLink to="contact" className="flex items-center justify-center py-3 bg-gray-800 px-6 font-medium text-xl group relative">
+                        <div className='flex items-center gap-1 justify-center text-gray-300'>
                             <span className="">Let's Talk</span>
                             <GoArrowUpRight size={25} className="pt-1 rotate-45 group-hover:rotate-0 transition-transform duration-300" />
                         </div>
-                    </Link>
+                    </RouterLink>
                 </div>
 
                 {/* Mobile Menu Button */}
                 <div className="md:hidden">
-                    <button onClick={toggleMenu} className="text-gray-200 hover:text-gray-600 focus:outline-none focus:text-gray-200">
-                        <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                        </svg>
+                    <button onClick={toggleMenu} className="text-gray-800 hover:text-gray-600 focus:outline-none">
+                        {isOpen ? (
+                            <MdOutlineClose className="h-8 w-8" /> // Show close icon when menu is open
+                        ) : (
+                            <LiaGripLinesSolid className="h-8 w-8" />
+                        )}
                     </button>
                 </div>
             </div>
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="md:hidden bg-gray-600">
-                    <Link to="/" className="block px-4 py-2  text-gray-300 hover:bg-gray-500">
-                        Intro
-                    </Link>
-                    <Link to="/about" className="block px-4 py-2  text-gray-300 hover:bg-gray-500">
-                        About
-                    </Link>
-                    <Link to="/projects" className="block px-4 py-2 text-gray-300 hover:bg-gray-500">
-                        Services
-                    </Link>
-                    <Link to="/technologies" className="block px-4 py-2  text-gray-300 hover:bg-gray-500">
-                        Technologies
-                    </Link>
-                    <Link to="/contact" className="block px-4 py-2  text-gray-300 hover:bg-gray-500">
-                        Contact
-                    </Link>
-                    <Link to="/contact" className="block px-4 py-2 text-gray-300   hover:bg-gray-500">
-                        Let's Talk
-                    </Link>
+                <div className="md:hidden font-serif pb-20  bg-gray-100 min-h-screen flex flex-col justify-center items-center text-center px-4">
+                    <RouterLink to="main" className="block px-4 py-2 text-gray-800 text-3xl hover:bg-gray-200 w-full">Home </RouterLink>
+                    <RouterLink to="/about" className="block px-4 py-2 text-gray-800 text-3xl hover:bg-gray-200 w-full">Work</RouterLink>
+                    <RouterLink to="portfolio" className="block px-4 py-2 text-gray-800 text-3xl hover:bg-gray-200 w-full">Services</RouterLink>
+                    <RouterLink to="/insights" className="block px-4 py-2 text-gray-800 text-3xl hover:bg-gray-200 w-full">Insights</RouterLink>
+                    <RouterLink to="/blogs" className="block px-4 py-2 text-gray-800 text-3xl hover:bg-gray-200 w-full">About</RouterLink>
                 </div>
             )}
         </nav>

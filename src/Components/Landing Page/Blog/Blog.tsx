@@ -1,49 +1,99 @@
-import React from 'react';
-import { FaArrowRight } from 'react-icons/fa';
-import image from "../../../assets/images/Mockuo.jpg"
-import { FaCalendarAlt, FaClock } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Card from './Card';
+import { GoArrowUpRight } from "react-icons/go";
+import { Link } from "react-router-dom"
+// Dummy data for cards
+const blogData = [
+    {
+        id: 1,
+        title: 'UI Latest Trends 2024',
+        description: 'AI will change the whole game in the designing era?',
+        imgSrc: 'https://plus.unsplash.com/premium_photo-1661339265887-be15949790ff?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    },
+    {
+        id: 2,
+        title: 'Mastering Front-End Development',
+        description: 'Why learning front-end development is essential in 2024',
+        imgSrc: 'https://plus.unsplash.com/photo-1581276879432-15a76f1f2d0d?q=80&w=2069&auto=format&fit=crop'
+    },
+    {
+        id: 3,
+        title: 'Responsive Web Design Best Practices',
+        description: 'The key principles for making your site mobile-friendly',
+        imgSrc: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2069&auto=format&fit=crop'
+    },
+    {
+        id: 4,
+        title: 'Exploring UX Research Techniques',
+        description: 'Understand user behavior to design better products',
+        imgSrc: 'https://plus.unsplash.com/photo-1573497019430-634a8b37d6ab?q=80&w=2069&auto=format&fit=crop'
+    }
+];
 
-const BlogSection: React.FC = () => {
+const Blog: React.FC = () => {
+    const [isMobile, setIsMobile] = useState(false);
+    const navigate = useNavigate();
+
+    const navigateToBlog = () => {
+        navigate('/blogs');
+    };
+
+    // Function to check screen width
+    const checkScreenSize = () => {
+        setIsMobile(window.innerWidth < 1024); // Setting for mobile if screen is less than 1024px wide
+    };
+
+    useEffect(() => {
+        // Check screen size on initial render
+        checkScreenSize();
+
+        // Add event listener to handle window resizing
+        window.addEventListener('resize', checkScreenSize);
+
+        return () => {
+            window.removeEventListener('resize', checkScreenSize);
+        };
+    }, []);
+
     return (
-        <div className="container font-serif mx-auto px-4 py-20 ">
-            <header className="w-full flex flex-col items-center justify-center text-center">
-                <h1 className="text-4xl md:text-6xl font-medium text-gray-800 mb-4">
-                    Take a Look at tha  <span className='text-gray-500'>Latest Articles</span><span className="text-xl pl-2">■</span>
-                </h1>
-                <p className="text-gray-600 text-lg max-w-4xl">
-                    Stay updated with the latest trends and expert insights in web development, UI/UX design, and more.
-                </p>
+        <div className="container font-serif mx-auto lg:px-0 px-3  lg:py-10 lg:pb-0 pb-10 lg:my-12 my-2">
+            <header className=" flex justify-between items-center">
+                    <h1 className="lg:text-5xl text-4xl font-medium text-gray-800 lg:mb-4 mb-0">
+                        Latest Insights.
+                    </h1>
+                <div className='lg:block hidden'>
+                    <button className="flex items-center justify-center group py-3 border border-gray-800 hover:bg-gray-800 px-6 font-medium text-lg group relative">
+                        <div className='flex items-center gap-1 justify-center group-hover:text-gray-300 text-gray-800'>
+                            <span className="">View All</span>
+                        </div>
+                    </button>
+                </div>
             </header>
-            <div className=' w-full gap-8 mt-12 flex justify-between cursor-pointer '>
-                <div className="w-1/2 rounded-xl overflow-hidden border bg-white">
-                    <img className="w-full h-96 object-cover" src={image} />
-                    <div className="px-10 pt-10 py-6 ">
-                        <div className=" text-2xl font-medium mb-2"> The Rapid Rise of Serverless Architecture in Modern Development</div>
-                        <p className="text-gray-700 text-lg">
-                            Explore how serverless architecture is transforming the way we build and deploy applications, its key advantages, and the challenges developers face when adopting this paradigm.
-                        </p>
-                    </div>
-                    <div className="px-10 gap-6 flex  items-center mb-6">
-                        <div className="flex items-center text-gray-600 text-xl gap-2">
-                            <FaCalendarAlt size={20} />
-                            October 8, 2022
-                        </div>
-                        <div className="flex items-center justify-center text-gray-600 text-xl gap-2 ">
-                            <FaClock size={20} />
-                            9 min read
-                        </div>
-                    </div>
-                </div>
-                <div className='w-1/2 space-y-6'>
-                    <Card />
-                    <Card />
-                    <Card />
 
-                </div>
+            {/* Render only 1 card on mobile and all cards on desktop */}
+            <div className='w-full gap-8 lg:mt-12 mt-4 grid grid-cols-1 lg:grid-cols-4 cursor-pointer' onClick={navigateToBlog}>
+                {isMobile
+                    ? <Card
+                        key={blogData[0].id}
+                        title={blogData[0].title}
+                        description={blogData[0].description}
+                        imgSrc={blogData[0].imgSrc}
+                    />
+                    : blogData.map((blog) => (
+                        <Card
+                            key={blog.id}
+                            title={blog.title}
+                            description={blog.description}
+                            imgSrc={blog.imgSrc}
+                        />
+                    ))}
+
             </div>
+          
+
         </div>
     );
 };
 
-export default BlogSection;
+export default Blog;

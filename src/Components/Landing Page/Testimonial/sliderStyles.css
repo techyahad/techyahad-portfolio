@@ -1,0 +1,23 @@
+.slick-dots li button {
+    width: 20px; /* Increase width */
+    height: 20px; /* Increase height */
+    border-radius: 50%; /* Make them round */
+    background-color: gray; /* Default background color */
+  }
+  
+  .slick-dots li.slick-active button {
+    background-color: black; /* Active dot color */
+  }
+  @media (max-width: 1024px) {
+    .slick-dots {
+      display: none !important;
+    }
+  }
+  .slick-list {
+    overflow: visible; /* Shows the overflowing part of the next card */
+  }
+  
+  /* Optional: Remove padding applied to the slider items */
+  .slick-slide {
+    padding: 0 !important;
+  }

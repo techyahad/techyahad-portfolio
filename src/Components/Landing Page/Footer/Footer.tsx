@@ -1,52 +1,64 @@
-import React from 'react';
+import React from "react";
 import Logo from "../../../assets/logo/Trans.png"
 import { GoArrowUpRight } from "react-icons/go";
 import { FaLinkedin, FaGithub, FaFacebook, FaBehance } from 'react-icons/fa';
-
+import { Link as ScrollLink } from 'react-scroll'; // Import Link from react-scroll
 
 const Footer = () => {
     return (
-        <footer className=" bg-gray-900 w-full ">
-            <div className='container mx-auto'>
-                <div className='flex justify-between py-16'>
-                    <h1 className='text-3xl text-gray-200 font-medium'>Stay connected w/me.</h1>
-                    <div className='relative '>
-                        <input className='bg-gray-900 border-b-2 pb-3 outline-none w-80 text-gray-300 text-lg' placeholder='Enter your email' />
-                        <button>
-                            <GoArrowUpRight color='white' size={25} className='absolute right-0 top-2 ' />
+        <footer className=" font-serif pt-14 bg-gray-900  w-full">
+            <div className=" container mx-auto  lg:mt-20 mt-2 lg:px-0 px-3 ">
+                <div className=" flex items-center pb-6  justify-center">
+                    <div className="text-center">
+                        <h1 className="lg:text-6xl text-3xl   font-medium text-gray-300">
+                            Have a Project in your mind?
+                        </h1>
+                        <p className=" lg:block hidden text-[20px]   leading-[32px]  text-gray-400 mt-4">
+                            Let's Talk. I'm here to transform your ideas into reality. Let's work together to <br /> create something extraordinary!
+                        </p>
+                        <p className=" block lg:hidden text-md    text-gray-400 mt-4">
+                            Let's Talk. I'm here to transform your ideas into reality.
+                        </p>
+                        <button className="  lg:py-3 py-1 mt-10 bg-gray-100 px-6  text-lg group relative">
+                            <div className='flex items-center gap-1 justify-center text-gray-800'>
+                                <span className="lg:block hidden">Get in touch now</span>
+                                <span className="block lg:hidden">Contact Now</span>
+
+                                <GoArrowUpRight size={25} className="pt-1 rotate-45 group-hover:rotate-0 transition-transform duration-300" />
+                            </div>
                         </button>
                     </div>
-
                 </div>
-                <hr className=' border-1 border-gray-600 ' />
+                <hr className=" border-gray-700 lg:hidden block" />
 
-                <div className='py-16 '>
-                    <div className='flex items-center gap-4 mb-4  '>
-                        <img src={Logo} className='w-16' alt="" />
-                        <h1 className='text-4xl font-medium text-gray-300'>Techy Ahad</h1>
-                    </div>
-                    <div className='flex justify-between'><h1 className='text-medium text-gray-400 w-full'>A Developer & Designer Who loves the technology and passionate <br /> about exploring modern tech stacks...</h1>
-                        <div className='flex items-center justify-center gap-6 text-gray-400 '>
-                            <a href=""><FaLinkedin size={25} /></a>
-                            <a href=""><FaGithub size={25} /></a>
-                            <a href=""> <FaFacebook size={25} /></a>
-                            <a href="">   <FaBehance size={25} /></a>
+                <div className='py-6 flex justify-center lg:justify-between'>
+                    <ScrollLink to="main" smooth={true} duration={500} className='lg:block hidden cursor-pointer'>
+                        <div className='flex items-center gap-4'>
+                            <img src={Logo} className='lg:w-16 w-12' alt="Techy Ahad Logo" />
                         </div>
-
+                    </ScrollLink>
+                    <div className='flex '>
+                        <div className='flex items-center justify-center gap-4  text-gray-200'>
+                            <a href="https://www.linkedin.com/in/abdul-ahad-designer" target="_blank" rel="noopener noreferrer">
+                                <FaLinkedin size={25} />
+                            </a>
+                            <a href="https://github.com/techyahad" target="_blank" rel="noopener noreferrer">
+                                <FaGithub size={25} />
+                            </a>
+                            <a href="https://www.facebook.com/techy-ahad" target="_blank" rel="noopener noreferrer">
+                                <FaFacebook size={25} />
+                            </a>
+                            <a href="https://www.behance.net/ahaddesigns" target="_blank" rel="noopener noreferrer">
+                                <FaBehance size={25} />
+                            </a>
+                        </div>
                     </div>
-
                 </div>
-                <hr className=' border-1 border-gray-600 ' />
-                <div className=' text-gray-500 py-8 flex justify-between  '>
-                    <p className='mb-4'>©2024 All Rights Reserved by Techy Ahad</p>
-                    <div className='space-x-6 mb-4 text-gray-300'>
-                        <a href="">Terms of Service</a>
-                        <a href="">Privacy and policy</a>
+                <hr className=" border-gray-700" />
 
-                    </div>
-                </div>
-
+                <h1 className="text-center lg:block hidden  text-gray-500 py-4">© Copyright 2024 Techy Ahad | All rights reserved.</h1>
             </div>
+
         </footer>
     );
 }

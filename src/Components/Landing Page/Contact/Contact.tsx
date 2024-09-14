@@ -2,18 +2,49 @@ import { Link } from "react-router-dom"
 import { GoArrowUpRight } from "react-icons/go";
 import { FaPhone, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa'
 import { FaLinkedin, FaFacebook, FaBehance, FaGithub } from 'react-icons/fa';
+import { useState } from "react";
 
 const Contact: React.FC = () => {
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+    });
 
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { id, value } = e.target;
+        setFormData({ ...formData, [id]: value });
+    };
+
+    const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setFormData({ ...formData, subject: e.target.value });
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        setFormData({
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            subject: '',
+            message: ''
+        });
+
+        // Refresh the page after form submission
+        window.location.reload();
+        console.log('Form Data:', formData);
+
+
+        // Replace the above line with the API call to send formData to the server
+    };
 
     return (
         <div className="w-full font-serif my-20 ">
-            <div className="container mx-auto flex items-center justify-center">
-                <div className="text-center">
-                    <h1 className="text-6xl text-gray-900 font-medium  mb-6">Let's Start <span className="text-gray-500"> Talk..</span></h1>
-                    <p className="text-gray-600 text-lg max-w-4xl">Reach out to us and let's discuss how We're here to listen and help you acheive your goals.</p>
-                </div>
-            </div>
 
             <div className="relative w-screen bg-white border rounded-3xl overflow-hidden flex mx-auto container my-20">
 
@@ -38,33 +69,40 @@ const Contact: React.FC = () => {
                             <FaEnvelope />
                             <h1 className="pl-2">abdulahadbaloxh@gmail.com</h1>
                         </div>
-
-
-
-
                     </div>
                     <div className="flex items-center text-gray-400 space-x-4  ">
-                        <FaLinkedin size={25} />
-                        <FaBehance size={25} />
-                        <FaGithub size={25} />
-                        <FaFacebook size={25} />
+                        <a href="https://www.linkedin.com/in/abdul-ahad-designer" target="_blank" rel="noopener noreferrer">
+                            <FaLinkedin size={25} />
+                        </a>
+                        <a href="https://github.com/techyahad" target="_blank" rel="noopener noreferrer">
+                            <FaGithub size={25} />
+                        </a>
+                        <a href="https://www.facebook.com/techy-ahad" target="_blank" rel="noopener noreferrer">
+                            <FaFacebook size={25} />
+                        </a>
+                        <a href="https://www.behance.net/ahaddesigns" target="_blank" rel="noopener noreferrer">
+                            <FaBehance size={25} />
+                        </a>
 
                     </div>
                 </div>
 
                 {/* Right Section */}
                 <div className="flex-1 bg-white p-16 flex flex-col border justify-center">
-                    <form className="">
+                    <form onSubmit={handleSubmit} className="">
                         <div className="mb-10 flex space-x-4">
                             <div className="w-1/2">
                                 <label className="block text-gray-500 text-sm font-medium mb-2" htmlFor="first-name">
                                     First Name
                                 </label>
                                 <input
-                                    className="appearance-none border-b-2 border-gray-300 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none "
-                                    id="first-name"
+                                    className="appearance-none border-b-2 border-gray-300 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                                    id="firstName"
                                     type="text"
                                     placeholder="Alexa"
+                                    value={formData.firstName}
+                                    onChange={handleChange}
+                                    required
                                 />
                             </div>
                             <div className="w-1/2">
@@ -72,10 +110,13 @@ const Contact: React.FC = () => {
                                     Last Name
                                 </label>
                                 <input
-                                    className="appearance-none border-b-2 border-gray-300 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none "
-                                    id="last-name"
+                                    className="appearance-none border-b-2 border-gray-300 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                                    id="lastName"
                                     type="text"
                                     placeholder="Adam"
+                                    value={formData.lastName}
+                                    onChange={handleChange}
+                                    required
                                 />
                             </div>
                         </div>
@@ -85,21 +126,27 @@ const Contact: React.FC = () => {
                                     Email
                                 </label>
                                 <input
-                                    className="appearance-none border-b-2 border-gray-300 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none "
+                                    className="appearance-none border-b-2 border-gray-300 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                                     id="email"
                                     type="email"
                                     placeholder="alexa@gmail.com"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required
                                 />
                             </div>
                             <div className="w-1/2">
-                                <label className="block text-gray-600 text-sm font-medium mb-2" htmlFor="number">
+                                <label className="block text-gray-600 text-sm font-medium mb-2" htmlFor="phone">
                                     Phone No:
                                 </label>
                                 <input
-                                    className="appearance-none border-b-2 border-gray-300 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none "
-                                    id="number"
-                                    type="number"
+                                    className="appearance-none border-b-2 border-gray-300 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                                    id="phone"
+                                    type="text"
                                     placeholder="123 4567890"
+                                    value={formData.phone}
+                                    onChange={handleChange}
+                                    required
                                 />
                             </div>
                         </div>
@@ -113,7 +160,11 @@ const Contact: React.FC = () => {
                                     <label className="inline-flex items-center">
                                         <input
                                             type="radio"
-                                            className="form-checkbox accent-gray-700  h-5 w-5 text-gray-600"
+                                            className="form-checkbox accent-gray-700 h-5 w-5 text-gray-600"
+                                            value="Web Development"
+                                            checked={formData.subject === "Web Development"}
+                                            onChange={handleRadioChange}
+                                            required
                                         />
                                         <span className="ml-2 text-gray-700">Web Development</span>
                                     </label>
@@ -122,7 +173,11 @@ const Contact: React.FC = () => {
                                     <label className="inline-flex items-center">
                                         <input
                                             type="radio"
-                                            className="form-checkbox accent-gray-700  h-5 w-5 text-gray-600"
+                                            className="form-checkbox accent-gray-700 h-5 w-5 text-gray-600"
+                                            value="Branding Designing"
+                                            checked={formData.subject === "Branding Designing"}
+                                            onChange={handleRadioChange}
+                                            required
                                         />
                                         <span className="ml-2 text-gray-700">Branding Designing</span>
                                     </label>
@@ -131,7 +186,11 @@ const Contact: React.FC = () => {
                                     <label className="inline-flex items-center">
                                         <input
                                             type="radio"
-                                            className="form-checkbox accent-gray-700  h-5 w-5 text-gray-600"
+                                            className="form-checkbox accent-gray-700 h-5 w-5 text-gray-600"
+                                            value="UI and UX"
+                                            checked={formData.subject === "UI and UX"}
+                                            onChange={handleRadioChange}
+                                            required
                                         />
                                         <span className="ml-2 text-gray-700">UI and UX</span>
                                     </label>
@@ -141,6 +200,10 @@ const Contact: React.FC = () => {
                                         <input
                                             type="radio"
                                             className="form-checkbox accent-gray-700 h-5 w-5 text-gray-600"
+                                            value="UX Experience"
+                                            checked={formData.subject === "UX Experience"}
+                                            onChange={handleRadioChange}
+                                            required
                                         />
                                         <span className="ml-2 text-gray-700">UX Experience</span>
                                     </label>
@@ -152,21 +215,25 @@ const Contact: React.FC = () => {
                                 Message
                             </label>
                             <textarea
-                                className="appearance-none outline-none border-b-2 border-gray-300 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none "
+                                className="appearance-none outline-none border-b-2 border-gray-300 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                                 id="message"
                                 rows={4}
-                                placeholder="Hey Ahad I'm interested in... "
+                                placeholder="Hey Ahad I'm interested in..."
+                                value={formData.message}
+                                onChange={handleChange}
+                                required
                             ></textarea>
                         </div>
                         <div className="">
-                            <div className="hidden md:flex cursor-pointer">
-                                <Link to="/contact" className="flex items-center justify-center text-gray-800 bg-gray-800 py-3 rounded-full   px-6 border-2  text-lg     group relative">
-                                    <div className='flex items-center gap-1 justify-center text-gray-300'>
-                                        <span className="">Send Message</span>
-                                        <GoArrowUpRight size={25} className="pt-1 rotate-45 group-hover:rotate-0 transition-transform duration-300" />
-                                    </div>
-                                </Link>
-                            </div>
+                            <button
+                                type="submit"
+                                className="flex items-center justify-center text-gray-800 bg-gray-800 py-3 rounded-full px-6 border-2 text-lg group relative"
+                            >
+                                <div className='flex items-center gap-1 justify-center text-gray-300'>
+                                    <span className="">Send Message</span>
+                                    <GoArrowUpRight size={25} className="pt-1 rotate-45 group-hover:rotate-0 transition-transform duration-300" />
+                                </div>
+                            </button>
                         </div>
                     </form>
                 </div>
