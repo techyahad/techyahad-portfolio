@@ -1,7 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link, Element } from 'react-scroll';
-
 import Main from './Hero/Main';
 import Work from './Work/Work';
 import Project from './Project/Project';
@@ -20,44 +18,32 @@ const Index: React.FC = () => {
         <>
             <hr className="container mx-auto" />
 
-            <Element name="main">
-                <motion.div initial="hidden" whileInView="visible" variants={fadeInUp}>
-                    <Main />
-                </motion.div>
-            </Element>
+            <motion.div initial="hidden" whileInView="visible" variants={fadeInUp}>
+                <Main />
+            </motion.div>
 
-            <Element name="project">
-                <motion.div initial="hidden" whileInView="visible" variants={fadeInUp}>
-                    <Work />
-                </motion.div>
-            </Element>
+            <motion.div initial="hidden" whileInView="visible" variants={fadeInUp}>
+                <Work />
+            </motion.div>
             <hr className="container mx-auto" />
 
-            <Element name="project">
-                <motion.div initial="hidden" whileInView="visible" variants={fadeInUp}>
-                    <Project />
-                </motion.div>
-            </Element>
+            <motion.div initial="hidden" whileInView="visible" variants={fadeInUp}>
+                <Project />
+            </motion.div>
             <hr className="container mx-auto" />
 
-            <Element name="about">
-                <motion.div initial="hidden" whileInView="visible" variants={fadeInUp}>
-                    <About />
-                </motion.div>
-            </Element>
+            <motion.div initial="hidden" whileInView="visible" variants={fadeInUp}>
+                <About />
+            </motion.div>
             <hr className="container mx-auto" />
 
-            <Element>
-                <motion.div initial="hidden" whileInView="visible" variants={fadeInUp}>
-                    <Review />
-                </motion.div>
-            </Element>
+            <motion.div initial="hidden" whileInView="visible" variants={fadeInUp}>
+                <Review />
+            </motion.div>
 
-            <Element name="blog">
-                <motion.div initial="hidden" whileInView="visible" variants={fadeInUp}>
-                    <Blog />
-                </motion.div>
-            </Element>
+            <motion.div initial="hidden" whileInView="visible" variants={fadeInUp}>
+                <Blog />
+            </motion.div>
         </>
     );
 };

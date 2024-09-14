@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
 import { FaStar } from "react-icons/fa";
 
-const Card = ({ name, date, reviewText }) => {
+// Define the prop types for the Card component
+interface CardProps {
+    name: string;
+    date: string;
+    reviewText: string;
+}
+
+const Card: React.FC<CardProps> = ({ name, date, reviewText }) => {
     return (
-        <div className="lg:px-12 px-10 border bg-white h-[400px]   rounded-lg  lg:py-20 py-10 text-center">
+        <div className="lg:px-12 px-10 border bg-white h-[400px] rounded-lg lg:py-20 py-10 text-center">
             {/* Profile image */}
             <div className="relative w-24 h-24 mx-auto mb-6">
                 <img
@@ -30,9 +37,7 @@ const Card = ({ name, date, reviewText }) => {
             </div>
 
             {/* Review text */}
-            <p className="text-gray-600 mb-10">
-                {reviewText}
-            </p>
+            <p className="text-gray-600 mb-10">{reviewText}</p>
 
             {/* User name and date */}
             <h3 className="font-medium text-lg">{name}</h3>

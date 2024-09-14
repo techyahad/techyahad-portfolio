@@ -1,7 +1,4 @@
 import React from 'react'
-import image from "../../../assets/images/1.jpg"
-import { Link as RouterLink } from 'react-router-dom';
-import { Link } from 'react-scroll';
 import { GoArrowUpRight } from 'react-icons/go';
 import { TbWriting } from "react-icons/tb";
 
@@ -29,12 +26,12 @@ const AboutSection: React.FC = () => {
                         </p>
                         <div className='flex items-center'>
                             <div className="md:flex cursor-pointer mt-3">
-                                <Link to="contact" smooth={true} duration={500} className="flex items-center justify-center text-gray-800 py-3 rounded-full hover:bg-gray-800 px-6 border-2 font-normal text-xl group relative">
+                                <button className="flex items-center justify-center text-gray-800 py-3 rounded-full hover:bg-gray-800 px-6 border-2 font-normal text-xl group relative">
                                     <div className='flex items-center gap-1 justify-center group-hover:text-gray-300'>
                                         <span>Let's Talk</span>
                                         <GoArrowUpRight size={25} className="pt-1 rotate-45 group-hover:rotate-0 transition-transform duration-300" />
                                     </div>
-                                </Link>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -48,12 +45,12 @@ const AboutSection: React.FC = () => {
                         </p>
                         <div className='flex items-center'>
                             <div className="md:flex cursor-pointer mt-3">
-                                <Link to="contact" smooth={true} duration={500} className="flex items-center justify-center text-gray-800 py-3 rounded-full hover:bg-gray-800 px-6 border-2 font-normal text-xl group relative">
+                                <button className="flex items-center justify-center text-gray-800 py-3 rounded-full hover:bg-gray-800 px-6 border-2 font-normal text-xl group relative">
                                     <div className='flex items-center gap-1 justify-center group-hover:text-gray-300'>
                                         <span>Let's Talk</span>
                                         <GoArrowUpRight size={25} className="pt-1 rotate-45 group-hover:rotate-0 transition-transform duration-300" />
                                     </div>
-                                </Link>
+                                </button>
                             </div>
                         </div>
                     </div>

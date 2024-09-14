@@ -3,7 +3,15 @@ import Slider from 'react-slick';
 import Card from './Card';
 import './sliderStyles.css';
 
-const reviewsData = [
+// Define the shape of the review data
+interface Review {
+  id: number;
+  name: string;
+  date: string;
+  reviewText: string;
+}
+
+const reviewsData: Review[] = [
   { id: 1, name: 'Brooklyn', date: '02/04/2020', reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
   { id: 2, name: 'Jordan', date: '05/12/2020', reviewText: 'Amazing work! Highly recommended.' },
   { id: 3, name: 'Ashlsey', date: '03/07/2021', reviewText: 'Very professional and skilled.' },
@@ -14,8 +22,8 @@ const reviewsData = [
   { id: 8, name: 'Alex', date: '11/09/2022', reviewText: 'Very satisfied with the quality of work.' },
 ];
 
-const Reviews = () => {
-  const [currentPage, setCurrentPage] = useState(1);
+const Reviews: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState<number>(1);
   const reviewsPerPage = 4;
 
   const indexOfLastReview = currentPage * reviewsPerPage;
@@ -24,7 +32,7 @@ const Reviews = () => {
 
   const totalPages = Math.ceil(reviewsData.length / reviewsPerPage);
 
-  const handlePageClick = (pageNumber) => {
+  const handlePageClick = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
 
@@ -63,16 +71,16 @@ const Reviews = () => {
       </header>
 
       {/* Grid for Desktop */}
-      <div className='hidden lg:grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pt-10 lg:pt-20'>
-        {currentReviews.map(review => (
-          <div className=" " key={review.id}> {/* Adds padding around each card */}
+      <div className='hidden lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pt-10 lg:pt-20'>
+        {currentReviews.map((review) => (
+          <div className="" key={review.id}> {/* Adds padding around each card */}
             <Card name={review.name} date={review.date} reviewText={review.reviewText} />
           </div>
         ))}
       </div>
 
       {/* Slider for Mobile */}
-      <div className="lg:hidden pt-10 ">
+      <div className="lg:hidden pt-10">
         <Slider {...sliderSettings}>
           {reviewsData.map((review) => (
             <div className="px-4" key={review.id}> {/* Adds padding between slider items */}
@@ -92,7 +100,7 @@ const Reviews = () => {
           ></span>
         ))}
       </div>
-    </div >
+    </div>
   );
 };
 

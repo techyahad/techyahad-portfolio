@@ -1,8 +1,6 @@
-import React from "react";
 import Logo from "../../../assets/logo/Trans.png"
 import { GoArrowUpRight } from "react-icons/go";
 import { FaLinkedin, FaGithub, FaFacebook, FaBehance } from 'react-icons/fa';
-import { Link as ScrollLink } from 'react-scroll'; // Import Link from react-scroll
 
 const Footer = () => {
     return (
@@ -32,11 +30,11 @@ const Footer = () => {
                 <hr className=" border-gray-700 lg:hidden block" />
 
                 <div className='py-6 flex justify-center lg:justify-between'>
-                    <ScrollLink to="main" smooth={true} duration={500} className='lg:block hidden cursor-pointer'>
+                    <button className='lg:block hidden cursor-pointer'>
                         <div className='flex items-center gap-4'>
                             <img src={Logo} className='lg:w-16 w-12' alt="Techy Ahad Logo" />
                         </div>
-                    </ScrollLink>
+                    </button>
                     <div className='flex '>
                         <div className='flex items-center justify-center gap-4  text-gray-200'>
                             <a href="https://www.linkedin.com/in/abdul-ahad-designer" target="_blank" rel="noopener noreferrer">

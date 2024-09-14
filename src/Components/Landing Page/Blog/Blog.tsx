@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Card from './Card';
-import { GoArrowUpRight } from "react-icons/go";
-import { Link } from "react-router-dom"
-// Dummy data for cards
 const blogData = [
     {
         id: 1,

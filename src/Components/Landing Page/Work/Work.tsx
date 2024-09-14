@@ -1,4 +1,3 @@
-import { GoArrowUpRight } from "react-icons/go";
 import Card from "./Card";
 
 const Work = () => {

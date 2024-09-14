@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-scroll';
 import { GoArrowUpRight } from "react-icons/go";
 import image from "../../../assets/images/aha.jpg"
 const Main: React.FC = () => {

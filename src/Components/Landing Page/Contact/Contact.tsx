@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import { GoArrowUpRight } from "react-icons/go";
 import { FaPhone, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa'
 import { FaLinkedin, FaFacebook, FaBehance, FaGithub } from 'react-icons/fa';
