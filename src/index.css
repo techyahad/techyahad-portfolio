@@ -1,19 +1,19 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "slick-carousel/slick/slick.css";
-@import "slick-carousel/slick/slick-theme.css";
 
 body {
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  
 }
 
 @media (max-width: 640px) {
   body {
-      background-color: #f5f5f5; /* Tailwind's bg-gray-100 color */
+    background-color: #f5f5f5; /* Tailwind's bg-gray-100 color */
   }
 }

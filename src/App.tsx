@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Loader from "./Loader/Loader"
+import Loader from "./Loader/Loader";
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Index from './Components/Landing Page/Index';
 import Layout from './Components/Sections/Layout';
-import "./App.css"
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -24,7 +23,8 @@ const App: React.FC = () => {
         <Loader />
       ) : (
         <Routes>
-          <Route path="/" element={<Layout />}>
+          {/* Define your routes here */}
+          <Route path="/techyahad-portfolio" element={<Layout />}>
             <Route index element={<Index />} />
           </Route>
         </Routes>

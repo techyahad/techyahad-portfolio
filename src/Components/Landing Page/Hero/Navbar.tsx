@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
 
     return (
         <nav className="">
-            <div className="container bg-white lg:bg-inherit mx-auto md:px-0 px-3 py-6 flex justify-between items-center">
+            <div className="container bg-white lg:bg-inherit mx-auto font-serif md:px-0 px-3 py-6 flex justify-between items-center">
                 {/* Logo Section */}
                 <div className="flex-shrink-0 text-2xl font-bold cursor-pointer">
                     <RouterLink to="/">

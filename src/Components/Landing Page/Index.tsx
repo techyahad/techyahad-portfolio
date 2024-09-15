@@ -5,7 +5,7 @@ import Work from './Work/Work';
 import Project from './Project/Project';
 import Blog from "./Blog/Blog";
 import About from './About/About';
-import Review from "./Testimonial/Reviews"
+import Review from "./Testimonial/Reviews";
 import './Index.css';
 
 const fadeInUp = {
@@ -18,30 +18,63 @@ const Index: React.FC = () => {
         <>
             <hr className="container mx-auto" />
 
-            <motion.div initial="hidden" whileInView="visible" variants={fadeInUp}>
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+            >
                 <Main />
             </motion.div>
 
-            <motion.div initial="hidden" whileInView="visible" variants={fadeInUp}>
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+            >
                 <Work />
             </motion.div>
+
             <hr className="container mx-auto" />
 
-            <motion.div initial="hidden" whileInView="visible" variants={fadeInUp}>
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+            >
                 <Project />
             </motion.div>
+
             <hr className="container mx-auto" />
 
-            <motion.div initial="hidden" whileInView="visible" variants={fadeInUp}>
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+            >
                 <About />
             </motion.div>
+
             <hr className="container mx-auto" />
 
-            <motion.div initial="hidden" whileInView="visible" variants={fadeInUp}>
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+            >
                 <Review />
             </motion.div>
 
-            <motion.div initial="hidden" whileInView="visible" variants={fadeInUp}>
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+            >
                 <Blog />
             </motion.div>
         </>

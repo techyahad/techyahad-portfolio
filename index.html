@@ -3,21 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Font stylesheet -->
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
       rel="stylesheet"
     />
 
+    <!-- Viewport settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Techy Ahad</title>
+
+    <!-- Include any critical CSS here if needed -->
+    <!-- <link rel="stylesheet" href="/path/to/critical.css" /> -->
   </head>
   <body>
-    <h1>Welcome</h1>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
 
+    <!-- Main script -->
+    <script type="module" src="/src/main.tsx" defer></script>
   </body>
 </html>
