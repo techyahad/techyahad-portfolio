@@ -1,4 +1,5 @@
 import Card from "./Card";
+import { FiArrowRight } from 'react-icons/fi'; // Import arrow icon
 
 const Work = () => {
   return (
@@ -31,11 +32,14 @@ const Work = () => {
         <Card />
         <Card />
       </div>
-      <button className="lg:hidden flex w-full items-center justify-center group py-3 border bg-gray-800 hover:bg-gray-700 px-6 font-medium text-lg group relative md:mt-0 mt-8">
-        <div className='flex items-center gap-1 justify-center group-hover:text-gray-300 text-gray-100'>
-          <span className="">Show All</span>
-        </div>
-      </button>
+      <div className="flex items-center justify-center lg:hidden block">
+        <button
+          className="flex items-center px-6 py-2 bg-gray-800 text-white font-medium rounded hover:bg-gray-700 transition"
+
+        >
+          Checkout Portfolio <FiArrowRight className="ml-2" />
+        </button>
+      </div>
     </div>
   );
 };

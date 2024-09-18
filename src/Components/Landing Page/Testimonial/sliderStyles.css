@@ -14,7 +14,26 @@
     }
   }
   .slick-list {
-    overflow: visible; /* Shows the overflowing part of the next card */
+    overflow: visible;
+    /* sliderStyles.css */
+.slick-slide {
+  display: flex;
+  justify-content: center; /* Center the slide content */
+}
+
+.slick-list {
+  overflow: hidden;
+  padding: 0 10px; /* Adds padding to the left and right for proper centering */
+}
+
+.slick-dots {
+  bottom: -25px;
+}
+
+.slick-prev, .slick-next {
+  display: none !important; /* Hide prev/next buttons in mobile mode if you don't want them */
+}
+ /* Shows the overflowing part of the next card */
   }
   
   /* Optional: Remove padding applied to the slider items */

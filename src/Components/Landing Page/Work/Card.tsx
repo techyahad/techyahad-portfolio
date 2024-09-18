@@ -2,7 +2,7 @@ import image from "../../../assets/Portfolio/First Image.jpg";
 
 const Card = () => {
     return (
-        <div className="lg:h-[570px] h-[450px] border bg-white lg:bg-gray-100 overflow-hidden cursor-pointer">
+        <div className="h-auto  border bg-white lg:bg-gray-100 overflow-hidden cursor-pointer">
             {/* Portfolio Image */}
             <div className="w-full lg:h-[399px] h-[300px] ">
                 <img src={image} alt="Portfolio Image" className="w-full h-full object-cover" />
@@ -20,7 +20,7 @@ const Card = () => {
                 </p>
 
                 {/* Hashtags */}
-                <div className="flex lg:space-x-3 space-x-1 mt-4 ">
+                <div className="flex lg:space-x-3 space-x-1 my-4 ">
                     <span className="border bg-gray-200 text-gray-800 py-1 px-3 text-sm">
                         figma
                     </span>

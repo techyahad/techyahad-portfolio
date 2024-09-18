@@ -7,6 +7,7 @@ import Blog from "./Blog/Blog";
 import About from './About/About';
 import Review from "./Testimonial/Reviews";
 import './Index.css';
+import Contact from './Contact/Contact';
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 50 },
@@ -19,6 +20,7 @@ const Index: React.FC = () => {
             <hr className="container mx-auto" />
 
             <motion.div
+                id="home" // Section ID for scrolling
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -28,6 +30,7 @@ const Index: React.FC = () => {
             </motion.div>
 
             <motion.div
+                id="work" // Section ID for scrolling
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -39,6 +42,7 @@ const Index: React.FC = () => {
             <hr className="container mx-auto" />
 
             <motion.div
+                id="services" // Section ID for scrolling
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -50,6 +54,7 @@ const Index: React.FC = () => {
             <hr className="container mx-auto" />
 
             <motion.div
+                id="about" // Section ID for scrolling
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -61,6 +66,7 @@ const Index: React.FC = () => {
             <hr className="container mx-auto" />
 
             <motion.div
+                id="review" // Section ID for scrolling
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -69,7 +75,20 @@ const Index: React.FC = () => {
                 <Review />
             </motion.div>
 
+            <hr className="container mx-auto" />
+
             <motion.div
+                id="contact" // Section ID for scrolling
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+            >
+                <Contact />
+            </motion.div>
+
+            <motion.div
+                id="insights" // Section ID for scrolling
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}

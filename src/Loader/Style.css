@@ -6,6 +6,18 @@
   animation: spinner-x0t3la 6s infinite linear;
 }
 
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .spinner {
+    width: 40px;
+    height: 40px;
+  }
+
+  .spinner::before {
+    width: 8px; /* Adjust size of the spinner bar */
+  }
+}
+
 .spinner::before {
   content: "";
   display: block;

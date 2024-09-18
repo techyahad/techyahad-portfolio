@@ -87,7 +87,7 @@ const Project: React.FC = () => {
                 {!showAll && window.innerWidth < 768 && (
                     <div className="flex justify-center mt-8 md:hidden">
                         <button
-                            className="flex items-center px-6 py-2 bg-gray-800 text-white font-medium rounded hover:bg-gray-700 transition"
+                            className="flex items-center px-6 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 transition"
                             onClick={() => setShowAll(true)}
                         >
                             View All <FiArrowDown className="ml-2" />
