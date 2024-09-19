@@ -11,7 +11,7 @@ const Main: React.FC = () => {
         <div className="container mx-auto font-serif my-16">
             <div className='flex items-center lg:my-40 my-12'>
                 {/* Left Side (Image) */}
-                <div className="lg:w-1/2 flex justify-center lg:block hidden">
+                <div className="lg:w-1/2 justify-center lg:flex hidden">
                     <img src={image} alt="Mockup" className="w-[530px] h-[530px] object-cover rounded" />
                 </div>
 
