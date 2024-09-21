@@ -11,7 +11,7 @@ const Main: React.FC = () => {
         <div className="container mx-auto font-serif my-16">
             <div className='flex items-center lg:my-40 my-12'>
                 {/* Left Side (Image) */}
-                <div className="lg:w-1/2 justify-center lg:flex hidden">
+                <div className="lg:w-1/2 justify-center lg:block hidden">
                     <img src={image} alt="Mockup" className="w-[530px] h-[530px] object-cover rounded" />
                 </div>
 
@@ -52,7 +52,7 @@ const Main: React.FC = () => {
 
                 <div className="flex flex-col lg:flex-row justify-between items-center h-auto lg:h-[350px] space-y-20 lg:space-y-0 py-8">
                     <div className="text-center space-y-2">
-                        <h2 className="text-6xl text-gray-800 font-semibold">15+</h2>
+                        <h2 className="text-6xl text-gray-800 font-semibold">3+</h2>
                         <p className="text-xl text-gray-500">Years of Experience</p>
                     </div>
 

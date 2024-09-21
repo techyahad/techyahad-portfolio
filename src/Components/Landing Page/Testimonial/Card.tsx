@@ -6,22 +6,24 @@ interface CardProps {
     name: string;
     date: string;
     reviewText: string;
+    image: string;
+    logo: string;
 }
 
-const Card: React.FC<CardProps> = ({ name, date, reviewText }) => {
+const Card: React.FC<CardProps> = ({ name, date, reviewText, image, logo }) => {
     return (
         <div className="lg:px-12 px-10 border bg-white h-[400px] rounded-lg lg:py-20 py-10 text-center">
             {/* Profile image */}
             <div className="relative w-24 h-24 mx-auto mb-6">
                 <img
-                    src="https://via.placeholder.com/100" // Replace with actual user image URL
+                    src={image} // Replace with actual user image URL
                     alt="User Profile"
                     className="w-24 h-24 rounded-full border-4 border-white shadow-md object-cover"
                 />
                 {/* Company logo */}
-                <div className="absolute bottom-0 right-0 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                <div className="absolute bottom-0 right-0 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
                     <img
-                        src="https://via.placeholder.com/20" // Replace with actual company logo URL
+                        src={logo} // Replace with actual company logo URL
                         alt="Company Logo"
                         className="w-6 h-6 rounded-full object-cover"
                     />

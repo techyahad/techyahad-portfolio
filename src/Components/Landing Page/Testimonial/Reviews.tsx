@@ -9,17 +9,19 @@ interface Review {
   name: string;
   date: string;
   reviewText: string;
+  image: string;
+  logo:string;
 }
 
 const reviewsData: Review[] = [
-  { id: 1, name: 'Brooklyn', date: '02/04/2020', reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  { id: 2, name: 'Jordan', date: '05/12/2020', reviewText: 'Amazing work! Highly recommended.' },
-  { id: 3, name: 'Ashlsey', date: '03/07/2021', reviewText: 'Very professional and skilled.' },
-  { id: 4, name: 'Taylor', date: '12/11/2021', reviewText: 'Great communication and fast delivery.' },
-  { id: 5, name: 'Chris', date: '20/01/2022', reviewText: 'Excellent service, will hire again.' },
-  { id: 6, name: 'Blaske', date: '28/05/2022', reviewText: 'Highly talented and creative individual.' },
-  { id: 7, name: 'Sam', date: '18/08/2022', reviewText: 'Delivered beyond expectations!' },
-  { id: 8, name: 'Alex', date: '11/09/2022', reviewText: 'Very satisfied with the quality of work.' },
+  { id: 1, logo:'https://freelogopng.com/images/all_img/1656739257fiverr-logo-transparent.png', name: 'Brooklyn', image: 'https://images.unsplash.com/photo-1725516434901-9f74585c543c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', date: '02/04/2020', reviewText: 'Delivered beyond expectations!', },
+  { id: 2, logo:'https://freelogopng.com/images/all_img/1656739257fiverr-logo-transparent.png', name: 'Jordan', image: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHx8', date: '05/12/2020', reviewText: 'Amazing work! Highly recommended.' },
+  { id: 3, logo:'https://freelogopng.com/images/all_img/1656739257fiverr-logo-transparent.png', name: 'Ashley', image: 'https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', date: '03/07/2021', reviewText: 'Very professional and skilled.' },
+  { id: 4, logo:'https://freelogopng.com/images/all_img/1656739257fiverr-logo-transparent.png', name: 'Taylor ', image: 'https://images.unsplash.com/photo-1616002851413-ebcc9611139d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fGluZGlhbiUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D', date: '12/11/2021', reviewText: 'Great communication and fast delivery.' },
+  { id: 5, logo:'https://freelogopng.com/images/all_img/1656739257fiverr-logo-transparent.png', name: 'Chris Lyan', image: 'https://images.unsplash.com/photo-1614429620642-8394077f0723?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8', date: '20/01/2022', reviewText: 'Excellent service, will hire again.' },
+  { id: 6, logo:'https://freelogopng.com/images/all_img/1656739257fiverr-logo-transparent.png', name: 'Blake', image: 'https://images.unsplash.com/photo-1625069767291-11cfb51ca538?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', date: '28/05/2022', reviewText: 'Highly talented and creative individual.' },
+  { id: 7, logo:'https://freelogopng.com/images/all_img/1656739257fiverr-logo-transparent.png', name: 'Sam Arthor', image: 'https://images.unsplash.com/photo-1648183185045-7a5592e66e9c?q=80&w=2042&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', date: '18/08/2022', reviewText: 'Delivered beyond expectations!' },
+  { id: 8, logo:'https://freelogopng.com/images/all_img/1656739257fiverr-logo-transparent.png', name: 'Alex Jam', image: 'https://plus.unsplash.com/premium_photo-1682089810582-f7b200217b67?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', date: '11/09/2022', reviewText: 'Very satisfied with the quality of work.' },
 ];
 
 const Reviews: React.FC = () => {
@@ -74,7 +76,7 @@ const Reviews: React.FC = () => {
       <div className='hidden lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pt-10 lg:pt-20'>
         {currentReviews.map((review) => (
           <div className="" key={review.id}> {/* Adds padding around each card */}
-            <Card name={review.name} date={review.date} reviewText={review.reviewText} />
+            <Card name={review.name} date={review.date} reviewText={review.reviewText} image={review.image} logo={review.logo} />
           </div>
         ))}
       </div>
@@ -84,7 +86,7 @@ const Reviews: React.FC = () => {
         <Slider {...sliderSettings}>
           {reviewsData.map((review) => (
             <div className="px-4" key={review.id}> {/* Adds padding between slider items */}
-              <Card name={review.name} date={review.date} reviewText={review.reviewText} />
+              <Card name={review.name} date={review.date} reviewText={review.reviewText} image={review.image} logo={review.logo} />
             </div>
           ))}
         </Slider>

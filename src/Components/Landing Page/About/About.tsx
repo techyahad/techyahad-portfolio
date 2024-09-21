@@ -39,7 +39,8 @@ const About: React.FC = () => {
                         </div>
 
                         <p className="text-lg md:text-xl text-gray-600 md:mb-10 mb-4 ">
-                            I'm a passionate UI/UX designer and front-end developer based in Sindh, Pakistan. Currently, I'm an undergraduate computer science student, balancing my academic pursuits with my love for technology and modern tech stacks. I specialize in creating visually appealing and highly functional web applications using React.js and TypeScript.
+                            Hey there! I'm Ahad, a UI/UX designer and front-end developer from Sindh, Pakistan. Along with being an undergraduate computer science student, I'm also a UI/UX trainer, helping others sharpen their design skills. I absolutely love diving into modern tech stacks, especially when it comes to building clean, visually appealing, and highly functional web applications using React.js and TypeScript. Balancing my passion for tech with my studies keeps me constantly learning and growing!
+
                         </p>
 
                         <div className="cursor-pointer mt-12 lg:block hidden">

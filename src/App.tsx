@@ -3,6 +3,8 @@ import Loader from "./Loader/Loader";
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Index from './Components/Landing Page/Index';
 import Layout from './Components/Sections/Layout';
+import BlogsSection from './Components/Sections/Blogs/BlogsSection';
+
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -26,6 +28,9 @@ const App: React.FC = () => {
           {/* Define your routes here */}
           <Route path="/techyahad-portfolio" element={<Layout />}>
             <Route index element={<Index />} />
+          </Route>
+          <Route path="/techyahad-portfolio/insights" element={<Layout />}>
+            <Route index element={<BlogsSection />} />
           </Route>
         </Routes>
       )}

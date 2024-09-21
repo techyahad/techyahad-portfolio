@@ -3,6 +3,7 @@ import { FaPhone, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa'
 import { FaLinkedin, FaFacebook, FaBehance, FaGithub } from 'react-icons/fa';
 import { useState } from "react";
 import { FiArrowRight } from 'react-icons/fi'; // Import arrow icon
+import Popup from './Popup';
 
 const Contact: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -13,18 +14,52 @@ const Contact: React.FC = () => {
         subject: '',
         message: ''
     });
+    const [showPopup, setShowPopup] = useState(false);
+    const [popupMessage, setPopupMessage] = useState(''); // State to store popup message
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { id, value } = e.target;
         setFormData({ ...formData, [id]: value });
     };
 
+
     const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormData({ ...formData, subject: e.target.value });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        const formData = new FormData(e.target as HTMLFormElement);
+        formData.append("access_key", "3f77099b-0eda-40aa-9ea2-50b58aa38ade");
+
+        const object = Object.fromEntries(formData.entries());
+        const json = JSON.stringify(object);
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json"
+                },
+                body: json
+            });
+
+            const res = await response.json();
+            if (res.success) {
+                console.log("Success", res);
+                setPopupMessage("Form submitted successfully!"); // Set success message
+            } else {
+                console.error("Error", res);
+                setPopupMessage("Form submission failed, please try again."); // Set failure message
+            }
+        } catch (error) {
+            console.error("Request failed", error);
+            setPopupMessage("An error occurred while submitting the form."); // Handle network or other errors
+        }
+
+        setShowPopup(true);
 
         setFormData({
             firstName: '',
@@ -34,12 +69,14 @@ const Contact: React.FC = () => {
             subject: '',
             message: ''
         });
-
-        window.location.reload();
-        console.log('Form Data:', formData);
-
-        // Replace the above line with the API call to send formData to the server
+        window.location.reload()
     };
+
+    const closePopup = () => {
+        setShowPopup(false); // Close the popup
+    };
+
+
 
     return (
         <div className="w-full font-serif lg:my-20 my-10 px-3 ">
@@ -76,7 +113,7 @@ const Contact: React.FC = () => {
                         </div>
                         <div className="flex items-center">
                             <FaEnvelope />
-                            <h1 className="pl-2">abdulahadbaloxh@gmail.com</h1>
+                            <h1 className="pl-2">techyahadofficial@gmail.com</h1>
                         </div>
                     </div>
                     <div className="flex items-center text-gray-400 space-x-4 mt-6">
@@ -105,6 +142,7 @@ const Contact: React.FC = () => {
                                 <input
                                     className="appearance-none border-b-2 border-gray-300 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                                     id="firstName"
+                                    name="first_name" // Add name attribute
                                     type="text"
                                     placeholder="Alexa"
                                     value={formData.firstName}
@@ -119,6 +157,7 @@ const Contact: React.FC = () => {
                                 <input
                                     className="appearance-none border-b-2 border-gray-300 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                                     id="lastName"
+                                    name="last_name" // Add name attribute
                                     type="text"
                                     placeholder="Adam"
                                     value={formData.lastName}
@@ -127,6 +166,7 @@ const Contact: React.FC = () => {
                                 />
                             </div>
                         </div>
+
                         <div className="mb-6 md:mb-10 flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-4">
                             <div className="w-full">
                                 <label className="block text-gray-500 text-sm font-medium mb-2" htmlFor="email">
@@ -135,6 +175,7 @@ const Contact: React.FC = () => {
                                 <input
                                     className="appearance-none border-b-2 border-gray-300 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                                     id="email"
+                                    name="email" // Add name attribute
                                     type="email"
                                     placeholder="alexa@gmail.com"
                                     value={formData.email}
@@ -149,6 +190,7 @@ const Contact: React.FC = () => {
                                 <input
                                     className="appearance-none border-b-2 border-gray-300 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                                     id="phone"
+                                    name="phone" // Add name attribute
                                     type="text"
                                     placeholder="123 4567890"
                                     value={formData.phone}
@@ -159,56 +201,25 @@ const Contact: React.FC = () => {
                         </div>
 
                         <div className="mb-6 md:mb-10">
-                            <label className="block text-gray-600 text-sm font-medium mb-4">
-                                Select Subject?
-                            </label>
+                            <label className="block text-gray-600 text-sm font-medium mb-4">Select Subject?</label>
                             <div className="grid grid-cols-2 gap-4">
-                                <label className="inline-flex items-center">
-                                    <input
-                                        type="radio"
-                                        className="form-checkbox accent-gray-700 h-5 w-5 text-gray-600"
-                                        value="Web Development"
-                                        checked={formData.subject === "Web Development"}
-                                        onChange={handleRadioChange}
-                                        required
-                                    />
-                                    <span className="ml-2 text-gray-700">Web Development</span>
-                                </label>
-                                <label className="inline-flex items-center">
-                                    <input
-                                        type="radio"
-                                        className="form-checkbox accent-gray-700 h-5 w-5 text-gray-600"
-                                        value="Branding Designing"
-                                        checked={formData.subject === "Branding Designing"}
-                                        onChange={handleRadioChange}
-                                        required
-                                    />
-                                    <span className="ml-2 text-gray-700">Branding Designing</span>
-                                </label>
-                                <label className="inline-flex items-center">
-                                    <input
-                                        type="radio"
-                                        className="form-checkbox accent-gray-700 h-5 w-5 text-gray-600"
-                                        value="UI and UX"
-                                        checked={formData.subject === "UI and UX"}
-                                        onChange={handleRadioChange}
-                                        required
-                                    />
-                                    <span className="ml-2 text-gray-700">UI and UX</span>
-                                </label>
-                                <label className="inline-flex items-center">
-                                    <input
-                                        type="radio"
-                                        className="form-checkbox accent-gray-700 h-5 w-5 text-gray-600"
-                                        value="UX Experience"
-                                        checked={formData.subject === "UX Experience"}
-                                        onChange={handleRadioChange}
-                                        required
-                                    />
-                                    <span className="ml-2 text-gray-700">UX Experience</span>
-                                </label>
+                                {["Web Development", "Branding Designing", "UI and UX", "UX Experience"].map((subject) => (
+                                    <label className="inline-flex items-center" key={subject}>
+                                        <input
+                                            type="radio"
+                                            name="subject" // Add name attribute
+                                            className="form-checkbox accent-gray-700 h-5 w-5 text-gray-600"
+                                            value={subject}
+                                            checked={formData.subject === subject}
+                                            onChange={handleRadioChange}
+                                            required
+                                        />
+                                        <span className="ml-2 text-gray-700">{subject}</span>
+                                    </label>
+                                ))}
                             </div>
                         </div>
+
                         <div className="mb-6 md:mb-10">
                             <label className="block text-gray-500 text-sm font-medium mb-2" htmlFor="message">
                                 Message
@@ -216,22 +227,26 @@ const Contact: React.FC = () => {
                             <textarea
                                 className="appearance-none outline-none border-b-2 border-gray-300 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                                 id="message"
+                                name="message" // Add name attribute
                                 rows={4}
                                 placeholder="Hey Ahad I'm interested in..."
                                 value={formData.message}
                                 onChange={handleChange}
                                 required
-                            ></textarea>
+                            />
                         </div>
-                        <div className="lg:block hidden  text-left">
-                            <button  className="flex items-center justify-center bg-gray-800 text-gray-100 lg:text-gray-100 py-3 lg:over:bg-gray-800 px-4 w-48 border-2 font-normal text-xl group relative">
-                                <div className='flex items-center gap-1 justify-center group-hover:text-gray-300'>
-                                    <span className="">Submit now</span>
-                                    <GoArrowUpRight size={25} className="pt-1 rotate-45 group-hover:rotate-0 transition-transform duration-300" />
-                                </div>
-                            </button>
-                        </div>
-                        <div className="lg:hidden block flex justify-center mt-8 md:hidden">
+
+                        <button
+                            className="flex items-center justify-center bg-gray-800 text-gray-100 py-3 px-4 w-48 border-2 font-normal text-xl group relative hidden lg:block"
+                            type="submit"
+                        >
+                            <div className="flex items-center gap-1 justify-center group-hover:text-gray-300">
+                                <span>Submit now</span>
+                                <GoArrowUpRight size={25} className="pt-1 rotate-45 group-hover:rotate-0 transition-transform duration-300" />
+                            </div>
+                        </button>
+
+                        <div className="lg:hidden  flex justify-center mt-8">
                             <button
                                 className="flex items-center px-6 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 transition"
                                 type="submit"
@@ -240,9 +255,14 @@ const Contact: React.FC = () => {
                             </button>
                         </div>
                     </form>
+
+
                 </div>
 
             </div>
+            {showPopup && (
+                <Popup message={popupMessage} onClose={closePopup} />
+            )}
         </div>
     );
 };

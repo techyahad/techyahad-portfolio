@@ -12,11 +12,11 @@ const blogData = [
         id: 2,
         title: 'Mastering Front-End Development',
         description: 'Why learning front-end development is essential in 2024',
-        imgSrc: 'https://plus.unsplash.com/photo-1581276879432-15a76f1f2d0d?q=80&w=2069&auto=format&fit=crop'
+        imgSrc: 'https://images.unsplash.com/photo-1610389051254-64849803c8fd?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
     {
         id: 3,
-        title: 'Responsive Web Design Best Practices',
+        title: 'Responsive Web Design ',
         description: 'The key principles for making your site mobile-friendly',
         imgSrc: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2069&auto=format&fit=crop'
     },
@@ -24,7 +24,7 @@ const blogData = [
         id: 4,
         title: 'Exploring UX Research Techniques',
         description: 'Understand user behavior to design better products',
-        imgSrc: 'https://plus.unsplash.com/photo-1573497019430-634a8b37d6ab?q=80&w=2069&auto=format&fit=crop'
+        imgSrc: 'https://images.unsplash.com/photo-1455849318743-b2233052fcff?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     }
 ];
 
@@ -33,7 +33,7 @@ const Blog: React.FC = () => {
     const navigate = useNavigate();
 
     const navigateToBlog = () => {
-        navigate('/blogs');
+        navigate('/techyahad-portfolio/insights');
     };
 
     // Function to check screen width
@@ -56,9 +56,9 @@ const Blog: React.FC = () => {
     return (
         <div className="container font-serif mx-auto lg:px-0 px-3  lg:py-10 lg:pb-0 pb-10 lg:my-12 my-2">
             <header className=" flex justify-between items-center">
-                    <h1 className="lg:text-5xl text-4xl font-medium text-gray-800 lg:mb-4 mb-0">
-                        Latest Insights.
-                    </h1>
+                <h1 className="lg:text-5xl text-4xl font-medium text-gray-800 lg:mb-4 mb-0">
+                    Latest Insights.
+                </h1>
                 <div className='lg:block hidden'>
                     <button className="flex items-center justify-center group py-3 border border-gray-800 hover:bg-gray-800 px-6 font-medium text-lg group relative">
                         <div className='flex items-center gap-1 justify-center group-hover:text-gray-300 text-gray-800'>
@@ -69,7 +69,7 @@ const Blog: React.FC = () => {
             </header>
 
             {/* Render only 1 card on mobile and all cards on desktop */}
-            <div className='w-full gap-8 lg:mt-12 mt-4 grid grid-cols-1 lg:grid-cols-4 cursor-pointer' onClick={navigateToBlog}>
+            <div className='w-full lg:gap-8  lg:mt-12 mt-4 grid grid-cols-1 lg:grid-cols-4 cursor-pointer' onClick={navigateToBlog}>
                 {isMobile
                     ? <Card
                         key={blogData[0].id}
@@ -87,7 +87,7 @@ const Blog: React.FC = () => {
                     ))}
 
             </div>
-          
+
 
         </div>
     );

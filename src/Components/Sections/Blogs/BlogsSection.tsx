@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import BlogCard from './BlogCard';
 import Pagination from './Pagination';
 import image from "../../../assets/images/Screen 1.jpg";
+import { FaLinkedin, FaFacebook, FaBehance } from 'react-icons/fa';
+
 
 const BlogsSection: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -63,26 +65,53 @@ const BlogsSection: React.FC = () => {
                 </p>
             </header>
             <hr className='container mx-auto' />
-            <div className='container mx-auto my-24 flex  justify-between'>
-                <nav className='w-1/3'>
-                    <h1 className='text-4xl font-medium'>Categories</h1>
-                    <div className='text-xl display-block space-y-2 mt-6'>
-                        {['All', 'Design Trend', 'Tech Stacks', 'UI / UX', 'Development'].map(category => (
-                            <div key={category} className='cursor-pointer'>
-                                <button
-                                    className={`hover:text-gray-400 ${selectedCategory === category ? 'text-gray-400' : ''}`}
-                                    onClick={() => {
-                                        setSelectedCategory(category);
-                                        setCurrentPage(1); // Reset to first page when category changes
-                                    }}
-                                >
-                                    {category}
-                                </button>
-                            </div>
-                        ))}
+            <div className='container min-h-screen mx-auto my-24 flex justify-between'>
+
+                <nav className='w-1/3 space-y-16 '>
+                    <div>
+                        <h1 className='text-4xl font-medium'>Categories</h1>
+                        <div className='text-xl display-block space-y-2 mt-6'>
+                            {['All', 'Design Trend', 'Tech Stacks', 'UI / UX', 'Development'].map(category => (
+                                <div key={category} className='cursor-pointer'>
+                                    <button
+                                        className={`hover:text-gray-400 ${selectedCategory === category ? 'text-gray-400' : ''}`}
+                                        onClick={() => {
+                                            setSelectedCategory(category);
+                                            setCurrentPage(1); // Reset to first page when category changes
+                                        }}
+                                    >
+                                        {category}
+                                    </button>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="w-2/3">
+                        <input
+                            className="appearance-none border-b border-gray-500 w-full py-2 px-2 text-gray-700 text-lg leading-tight focus:outline-none"
+                            id="firstName"
+                            name="first_name"
+                            type="text"
+                            placeholder="Search"
+                        />
+                    </div>
+                    <div className="w-2/3">
+                        <h1>Follow me here: </h1>
+                        <div className="flex items-center text-gray-800 space-x-4 mt-6">
+                            <a href="https://www.linkedin.com/in/abdul-ahad-designer" target="_blank" rel="noopener noreferrer">
+                                <FaLinkedin size={30} />
+                            </a>
+                            <a href="https://www.facebook.com/techy-ahad" target="_blank" rel="noopener noreferrer">
+                                <FaFacebook size={30} />
+                            </a>
+                            <a href="https://www.behance.net/ahaddesigns" target="_blank" rel="noopener noreferrer">
+                                <FaBehance size={30} />
+                            </a>
+                        </div>
                     </div>
                 </nav>
-                <div className='w-full space-y-10'>
+
+                <div className='w-full space-y-6'>
                     {currentPosts.length > 0 ? (
                         currentPosts.map((blog, index) => (
                             <React.Fragment key={index}>
