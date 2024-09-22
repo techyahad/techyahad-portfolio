@@ -1,0 +1,22 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  border: 8px solid #f3f3f3; /* Light grey background */
+  border-top: 8px solid #3498db; /* Blue top border */
+  border-radius: 50%; /* Circular border */
+  width: 50px; /* Size of the loader */
+  height: 50px; /* Size of the loader */
+  animation: spin 1s linear infinite; /* Spin animation */
+  position: absolute; /* Position it centered if needed */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  margin-top: -25px; /* Offset by half of the height */
+  margin-left: -25px; /* Offset by half of the width */
+}

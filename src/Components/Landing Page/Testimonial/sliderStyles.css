@@ -1,0 +1,42 @@
+.slick-dots li button {
+    width: 20px; /* Increase width */
+    height: 20px; /* Increase height */
+    border-radius: 50%; /* Make them round */
+    background-color: gray; /* Default background color */
+  }
+  
+  .slick-dots li.slick-active button {
+    background-color: black; /* Active dot color */
+  }
+  @media (max-width: 1024px) {
+    .slick-dots {
+      display: none !important;
+    }
+  }
+  .slick-list {
+    overflow: visible;
+    /* sliderStyles.css */
+.slick-slide {
+  display: flex;
+  justify-content: center; /* Center the slide content */
+}
+
+.slick-list {
+  overflow: hidden;
+  padding: 0 10px; /* Adds padding to the left and right for proper centering */
+}
+
+.slick-dots {
+  bottom: -25px;
+}
+
+.slick-prev, .slick-next {
+  display: none !important; /* Hide prev/next buttons in mobile mode if you don't want them */
+}
+ /* Shows the overflowing part of the next card */
+  }
+  
+  /* Optional: Remove padding applied to the slider items */
+  .slick-slide {
+    padding: 0 !important;
+  }

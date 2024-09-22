@@ -1,0 +1,41 @@
+{
+    "blogs": [
+      {
+        "id": 1,
+        "title": "The Future of Front-End Development",
+        "date": "2024-08-01",
+        "author": "Ahad",
+        "bio": "Exploring the emerging trends and technologies shaping the future of front-end development.",
+        "imageUrl": "https://example.com/future-of-front-end.jpg",
+        "excerpt": "A sneak peek into what's next for front-end development and how you can stay ahead."
+      },
+      {
+        "id": 2,
+        "title": "Designing for User Experience",
+        "date": "2024-08-02",
+        "author": "Ahad",
+        "bio": "A guide to understanding and implementing effective UI/UX design principles.",
+        "imageUrl": "https://example.com/ui-ux-design.jpg",
+        "excerpt": "Tips and best practices for creating user-friendly and engaging designs."
+      },
+      {
+        "id": 3,
+        "title": "Optimizing React Performance",
+        "date": "2024-08-03",
+        "author": "Ahad",
+        "bio": "Learn how to enhance the performance of your React applications with these proven strategies.",
+        "imageUrl": "https://example.com/react-performance.jpg",
+        "excerpt": "Strategies and techniques to make your React apps faster and more efficient."
+      },
+      {
+        "id": 4,
+        "title": "Tailwind CSS: Beyond the Basics",
+        "date": "2024-08-04",
+        "author": "Ahad",
+        "bio": "Dive deeper into Tailwind CSS and discover advanced techniques for crafting beautiful and responsive designs.",
+        "imageUrl": "https://example.com/tailwind-css.jpg",
+        "excerpt": "Advanced Tailwind CSS tips and tricks to level up your styling game."
+      }
+    ]
+  }
+  
